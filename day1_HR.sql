@@ -1,0 +1,66 @@
+-- this is how we leave a comment in SQL
+-- SQL is most of the time case insensetive
+-- * is wildcard, means all columns
+--SQL Query ends with semi column
+-- each query will run individually
+select * FROM employees;
+-- you can only use the table that exist, otherwise it gives error
+select * from countries;
+
+-- Task 1: Using above example, see all data from all other tables
+select * from departments;
+select * from jobs;
+SELECT * FROM locations;
+SELECT * From job_history;
+SELECT * FROM regions;
+
+-- SELECTING SPECIFIC COLUMN RATHER THAN ALL OF THEM FROM A TABLE
+-- YOU CAN USE COLUMN NAME SEPERATED BY COMMA TO GET ONLY COLUMNS YOU CARE ABOUT
+SELECT first_name, salary FROM employees;
+-- TASK2: SHOW THE RESULT OF ALL last_name, hire_date, department_id FROM EMPLOYEES
+SELECT last_name, hire_date, department_id FROM EMPLOYEES;
+-- WHITE SPACE IS NOT MATTER. 
+-- MAKE IT AS MUCH READABLE AS POSSIBLE WITH YOUR IMAGINATION.
+
+--TASK3: SELECT THESE COLUMNS FROM LOCATIONS TABLE STREET_ADDRESS, CITY, STATE_PROVINCE 
+SELECT street_address, city, state_province FROM LOCATIONS;
+
+-- RESTRICTING THE ROW WITH CONDITION
+-- WHERE CLAUSE CAN BE USED AFTER FROM DATABASE
+-- THE RESTRICT RESULT ACCORDING TO A CERTAIN CONDITION
+
+-- GET ALL THE EMPLOYEE INFORMATION IF THEIR SALARY IS MORE THAN 10000
+SELECT * FROM employees WHERE salary > 10000;
+
+-- OTHER RELATIONAL OPERATORS ARE:
+-- = EQUAL | NOT EQUAL <> !=
+-- > , >= , < , <=
+
+SELECT first_name, salary FROM EMPLOYEES WHERE salary = 24000;
+-- FIND THE OPPOSITE ABOVE RESULT
+SELECT first_name, salary FROM EMPLOYEES WHERE salary != 24000;
+SELECT first_name, salary FROM EMPLOYEES WHERE salary <> 24000;
+-- <> MEANS ALSO !=
+
+-- ABOUT STRING
+-- FIND OUT THE FIRST NAME  AND LAST NAME OF EMPLOYEES
+SELECT FIRST_NAME, LAST_NAME FROM employees WHERE first_name = 'Alexander';
+-- COMMAND IS CASE INSENSETIVE, BUT DATA IS CASE SENSETIVE
+
+-- TASK4: SELECT ALL LOCATION FROM DEPARTMENT TABLE NOT INCLUDING THE LOCATION OF 1700
+SELECT * FROM departments WHERE location_id <> 1700;
+
+-- LOGICAL OPERATORS AND OR
+-- FIND OUT ALL EMPLOYEES WITH SALARY BETWEEN 8000, 12000
+SELECT * FROM employees WHERE salary >= 8000 AND SALARY <= 12000; 
+
+-- FIND OUT ALL EMPLOYEES WITH EMPLOYEE_ID, FIRST_NAME SALARY OVER 12000, AND LESS THAN 6000
+SELECT EMPLOYEE_ID, FIRST_NAME,SALARY FROM employees WHERE SALARY >= 12000 OR SALARY <= 6000; 
+
+-- DIFFERENT APPROACH
+--FIND OUT ALL EMPLOYEES WITH SALARY BETWEEN 8000, 12000
+SELECT * FROM employees WHERE salary BETWEEN 8000 AND 12000;
+
+
+
+
